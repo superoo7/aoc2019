@@ -1,5 +1,7 @@
-export const processOpcode = (input: string) => {
+export const processOpcode = (input: string, noun?: number, verb?: number) => {
   let codes = input.split(",").map(d => Number(d));
+  if (noun) codes[1] = noun;
+  if (verb) codes[2] = verb;
   // 1,9,10,3,2,3,11,0,99,30,40,50
   // 1 - addition
   // 2 - multiplication
